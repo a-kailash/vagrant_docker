@@ -54,12 +54,14 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you are using for more
   # information on available options.
 
-   config.vm.provision "shell" do |s|
-	s.path = "install_docker_1_12.sh"
-	s.env = {
-		CIURL: ENV["CIURL"],
-		TOKEN: ENV["CITOKEN"],
-		NAME: ENV["NAME"], #description
-	}
-   end
+   #config.vm.provision "shell" do |s|
+   #     s.path = "install_docker_1_12.sh"
+   #     s.env = {
+   #     	CIURL: ENV["CIURL"],
+   #     	TOKEN: ENV["CITOKEN"],
+   #     	NAME: ENV["NAME"], #description
+   #     }
+   #end
+   config.vm.provision "docker1.12", type:  :shell, path: "install_docker_1_12.sh"
+   config.vm.provision "docker1.13", type:  :shell, path: "install_docker_1_13.sh"
 end

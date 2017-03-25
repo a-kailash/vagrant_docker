@@ -21,7 +21,13 @@ vagrant plugin install vagrant-vbguest
 ## Commands to run
 
 ```
-Run vagrant up
+vagrant up --no-provision
+
+#If you want Docker 1.12
+vagrant provision --provision-with docker1.12
+#If you want Docker 1.13
+vagrant provision --provision-with docker1.13
+
 vagrant ssh
-sudo docker run hello-world
+docker run hello-world
 ```
