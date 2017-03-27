@@ -28,6 +28,7 @@ vagrant provision --provision-with docker1.12
 #If you want Docker 1.13
 vagrant provision --provision-with docker1.13
 
+#Quick test to prove Docker works
 vagrant ssh
 docker run hello-world
 ```
